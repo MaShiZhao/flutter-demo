@@ -96,8 +96,7 @@ class _MyHomePageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on), label: '车主分期'),
+          BottomNavigationBarItem(icon: Icon(Icons.monetization_on), label: '车主分期'),
           BottomNavigationBarItem(icon: Icon(Icons.computer), label: '车主服务'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: '我的'),
         ],

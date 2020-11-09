@@ -74,7 +74,7 @@ class _CustomBannerSate extends State<CustomBanner> {
                             borderRadius: BorderRadiusDirectional.circular(4)),
                         clipBehavior: Clip.antiAlias,
                         child: FadeInImage.assetNetwork(
-                          placeholder: "images/ic_launcher_app.png",
+                          placeholder: "",
                           image: widget.data[index % widget.data.length],
                           alignment: Alignment.center,
                           fit: BoxFit.fitWidth,

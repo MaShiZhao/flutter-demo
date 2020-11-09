@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class HomeTitle extends StatelessWidget {
   String label;
+  Function _onTap;
 
-  HomeTitle(this.label);
+  HomeTitle(this.label, this._onTap);
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +20,23 @@ class HomeTitle extends StatelessWidget {
             ),
             Positioned(
                 right: 0,
-                child: Row(
-                  children: [
-                    Text(
-                      '更多',
-                    ),
-                    Padding(
+                child: GestureDetector(
+                  onTap: this._onTap,
+                  child: Row(
+                    children: [
+                      Text(
+                        '更多',
+                      ),
+                      Padding(
                         padding: EdgeInsets.only(left: 4),
                         child: Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.grey,
                           size: 12,
-                        ))
-                  ],
+                        ),
+                      ),
+                    ],
+                  ),
                 )),
           ],
         ));

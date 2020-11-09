@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_demo/page/car/car_list.dart';
 import 'package:flutter_demo/utils/color_utils.dart';
 import 'package:flutter_demo/widgets/custom_banner.dart';
 import 'package:flutter_demo/widgets/page/home_car_item.dart';
@@ -53,70 +54,77 @@ class _HomePageState extends State<HomePage>
         ),
         Expanded(
             child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 20, left: 16, right: 16),
-                    child: CustomBanner(),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10, left: 4, right: 16),
-                    child: TabBar(
-                        controller: this._tabController,
-                        isScrollable: true,
-                        labelColor: Colors.deepOrange,
-                        indicatorColor: Colors.deepOrange,
-                        indicatorWeight: 1,
-                        indicatorSize: TabBarIndicatorSize.label,
-                        unselectedLabelColor: Colors.black,
-                        tabs: tabs.map((e) => Tab(text: e)).toList()),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: HomeTitle("大家都在看"),
-                ),
-                SliverPadding(
-                  padding: EdgeInsets.only(top: 20, left: 16, right: 16),
-                  sliver: SliverGrid(
-                    //Grid
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, //Grid按两列显示
-                          mainAxisSpacing: 20.0,
-                          childAspectRatio: 0.7,
-                          crossAxisSpacing: 20.0),
-                      delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          //创建子widget
-                          return HomeCarItem();
-                        },
-                        childCount: 6,
-                      )),
-                ),
-                SliverToBoxAdapter(
-                  child: HomeTitle("合作银行"),
-                ),
-                SliverPadding(
-                  padding:
+          slivers: [
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+                child: CustomBanner(),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(top: 10, left: 4, right: 16),
+                child: TabBar(
+                    controller: this._tabController,
+                    isScrollable: true,
+                    labelColor: Colors.deepOrange,
+                    indicatorColor: Colors.deepOrange,
+                    indicatorWeight: 1,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    unselectedLabelColor: Colors.black,
+                    tabs: tabs.map((e) => Tab(text: e)).toList()),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: HomeTitle(
+                  "大家都在看",
+                  () => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return CarList();
+                        }))
+                      }),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+              sliver: SliverGrid(
+                  //Grid
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, //Grid按两列显示
+                      mainAxisSpacing: 20.0,
+                      childAspectRatio: 0.63,
+                      crossAxisSpacing: 20.0),
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      //创建子widget
+                      return HomeCarItem();
+                    },
+                    childCount: 6,
+                  )),
+            ),
+            SliverToBoxAdapter(
+              child: HomeTitle("合作银行",(){}),
+            ),
+            SliverPadding(
+              padding:
                   EdgeInsets.only(top: 20, left: 16, right: 16, bottom: 30),
-                  sliver: SliverGrid(
-                    //Grid
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, //Grid按两列显示
-                          mainAxisSpacing: 10.0,
-                          childAspectRatio: 2.3,
-                          crossAxisSpacing: 10.0),
-                      delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          //创建子widget
-                          return HomeCardItem();
-                        },
-                        childCount: 6,
-                      )),
-                ),
-              ],
-            ))
+              sliver: SliverGrid(
+                  //Grid
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, //Grid按两列显示
+                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 2.3,
+                      crossAxisSpacing: 10.0),
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      //创建子widget
+                      return HomeCardItem();
+                    },
+                    childCount: 6,
+                  )),
+            ),
+          ],
+        ))
       ]),
     );
   }

@@ -12,7 +12,7 @@ class HomeCarItem extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                   color: Colors.grey,
-                  offset: Offset(0, 4),
+                  offset: Offset(4, 4),
                   blurRadius: 4,
                   spreadRadius: 1)
             ]),
@@ -117,7 +117,7 @@ class HomeCarItem extends StatelessWidget {
             Positioned(
                 left: 20,
                 top: 1,
-                child: Icon(Icons.receipt_long, color: Colors.red)),
+                child: Icon(Icons.turned_in, color: Colors.red)),
           ],
         ));
   }
