@@ -73,12 +73,14 @@ class _CustomBannerSate extends State<CustomBanner> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadiusDirectional.circular(4)),
                         clipBehavior: Clip.antiAlias,
-                        child: FadeInImage.assetNetwork(
-                          placeholder: "",
+                        child:
+                        FadeInImage.assetNetwork(
+                          placeholder: "images/ic_launcher_app.png",
                           image: widget.data[index % widget.data.length],
                           alignment: Alignment.center,
                           fit: BoxFit.fitWidth,
-                        )));
+                        )
+                    ));
               },
               onPageChanged: (position) => {
                     setState(() {
