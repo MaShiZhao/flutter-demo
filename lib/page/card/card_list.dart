@@ -66,24 +66,6 @@ class CardListSate extends State<CardList> with SingleTickerProviderStateMixin {
     cityBeans.add(cityBean5);
     cityBeans.add(cityBean6);
     cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean7);
-    // cityBeans.add(cityBean);
   }
 
   @override

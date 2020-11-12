@@ -120,12 +120,6 @@ class CardLetterSearch extends StatelessWidget {
                 onVerticalDragUpdate: (detail) {
                   _indexChange(detail.localPosition.dy);
                 },
-                onVerticalDragEnd: (detail) {
-                  print('onVerticalDragEnd ');
-                },
-                onVerticalDragCancel: () {
-                  print('onVerticalDragCancel  ');
-                },
               ))
         ],
       ),
@@ -136,7 +130,7 @@ class CardLetterSearch extends StatelessWidget {
     for (int i = 0, length = data.length; i < length; i++) {
       double a = letterHeight * i;
       double b = letterHeight * (i + 1);
-      print('_getIndex $ySet == $a -- $b');
+      // print('_getIndex $ySet == $a -- $b');
       if (ySet >= a && ySet <= b) {
         return i;
       }
@@ -146,7 +140,7 @@ class CardLetterSearch extends StatelessWidget {
 
   void _indexChange(double dy) {
     int index = _getIndex(dy);
-    print('_indexChange $index ');
+    // print('_indexChange $index ');
     if (index == -1) return;
     // 如果是当前正在提示的则无需提示
     if (_currentIndex != index) {
